@@ -1,0 +1,100 @@
+<html>
+<head>
+<style>
+body 
+{
+  background: black;
+  color: #d3d3d3;
+  font-size: 20px;
+  font-family: Verdana;
+}
+
+#map
+{
+  border: double;
+}
+
+#msg
+{
+  border: double;
+  width: 700;
+  height: 26;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+#status
+{
+  border: double;
+  width: 995;
+  height: 26;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+#name
+{
+  background: #222;
+  font-size: 18px;
+//  position: absolute;
+//  left: 780;
+//  top: 12;
+  margin-top: 7;
+  margin-right: 10px;
+}
+
+#restart
+{
+  font-size: 18px;
+//  position: absolute;
+//  left: 920;
+//  top: 12;
+  margin-top: 5;
+  cursor: pointer;
+  background: #222;
+  border: 1px solid #777;
+  padding-left: 3px;
+  width: 86;
+  height: 25;
+}
+
+</style>
+</head>
+<body>
+<!--div style="width: 1024; height: 768; background: #333333"-->
+<div id="haxe:trace"
+  style="position: absolute; left:100px; font-size:10px; color:green"><br></div>
+<table width=1000>
+<tr>
+<td valign=top><div id="name">Black Obelisk <span id="version"></span></div>
+<td halign=left><div id="msg"></div>
+<td valign=top><div id="restart">RESTART</div>
+</table>
+<canvas id="map" width=1000 height=650></canvas>
+<div id="status"></div>
+
+<p style='text-align:center; width:1000; color:lightgray; font-size:12'>
+<a href='../index.html'>Back</a> -
+<a target=_blank href='http://code.google.com/p/bobelisk/'>Google code project page</a> -
+<a target=_blank href='http://code.google.com/p/bobelisk/wiki/Manual'>Manual</a> -
+Tested in FF3.5, Chromium. IE, Opera fail.
+You can reach me at <b>starinfidel_at_gmail_dot_com</b>.</p>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7261859-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+<script src="lib/HTML.js"></script>
+<script type="text/javascript" src="obelisk.js"></script>
+
+<!--/div-->
+</body>
+</html>
