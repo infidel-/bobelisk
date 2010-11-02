@@ -8,10 +8,10 @@ class Cell
 
   public var x: Int;
   public var y: Int;
-  public var type: String;
-  public var isVisible: Bool;
-  public var hasZombie: Bool;
-  public var zombieAlerted: Bool;
+  public var type: String; // cell type (grass, water, etc)
+  public var isVisible: Bool; // cell visible to player?
+  public var hasZombie: Bool; // cell has creature?
+  public var zombieAlerted: Bool; // creature is alerted?
 
   public function new(g: Game)
     {
@@ -255,7 +255,11 @@ class Cell
           var c = map.get(x + dx[i], y + dy[i]);
           if (c == null) continue;
 
-          c.hasZombie = false;
+          if (c.hasZombie) // count dead creatures
+            {
+              game.zombiesDestroyed++;
+              c.hasZombie = false;
+            }
 
           // explosion alerts zombies
           c.alertNearbyZombies(false);

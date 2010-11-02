@@ -5,6 +5,8 @@ class Game
   public var ui: UI;
   public var map: Map;
   public var turns: Int;
+  public var zombies: Int;
+  public var zombiesDestroyed: Int;
   public var isFinished: Bool;
 
   public function new()
@@ -57,11 +59,13 @@ class Game
       ui.track("startGame");
       isFinished = false;
       turns = 0;
+      zombies = 0;
+      zombiesDestroyed = 0;
       map.generate();
       map.paint();
       ui.paintStatus();
     }
 
 
-  public static var version = "v1"; // game version
+  public static var version = "v2"; // game version
 }
