@@ -203,6 +203,8 @@ class UI
         game.map.obelisksFound() + " / " + game.map.obelisks.length +
         "<td halign=left>Obelisks shattered: " +
         game.map.obelisksShattered() + " / " + game.map.obelisks.length +
+        "<td halign=left>Creatures destroyed: " +
+        game.zombiesDestroyed + " / " + game.zombies +
         "<td halign=right><p style='text-align:right; margin-right:5'>" +
         "Turns: " + game.turns + "</table>";
       e("status").innerHTML = s;
@@ -232,13 +234,22 @@ class UI
       var metrics = map.measureText(text);
       map.fillText(text, (el.width - metrics.width) / 2,
         (el.height - cellSize) / 2);
+
+      if (isVictory)
+        {
+          text = "You have managed to destroy " + game.zombiesDestroyed +
+            " creatures.";
+          var metrics = map.measureText(text);
+          map.fillText(text, (el.width - metrics.width) / 2,
+            (el.height - cellSize) / 2 + 40);
+        }
     }
 
 
 // track stuff through google analytics
   public inline function track(action: String, ?label: String, ?value: Int)
     {
-      action += " " + Game.version;
+      action = "obelisk "  + action + " " + Game.version;
       if (label == null)
         label = '';
       if (value == null)

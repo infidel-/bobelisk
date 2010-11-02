@@ -70,6 +70,10 @@ class Map
 
             cells.set(x + "," + y, cell);
           }
+
+      for (c in cells) // count number of creatures
+        if (c.hasZombie)
+          game.zombies++;
   
       generateObelisks();
       generateBuildings();
